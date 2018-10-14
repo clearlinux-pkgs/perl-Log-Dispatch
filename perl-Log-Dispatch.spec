@@ -4,14 +4,14 @@
 #
 Name     : perl-Log-Dispatch
 Version  : 2.68
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.68.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.68.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libl/liblog-dispatch-perl/liblog-dispatch-perl_2.67-1.debian.tar.xz
 Summary  : 'Dispatches messages to one or more outputs'
 Group    : Development/Tools
 License  : Artistic-2.0 GPL-2.0 MIT
-Requires: perl-Log-Dispatch-license
+Requires: perl-Log-Dispatch-license = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(B::Hooks::EndOfScope)
 BuildRequires : perl(Class::Data::Inheritable)
@@ -46,7 +46,7 @@ version 2.68
 %package dev
 Summary: dev components for the perl-Log-Dispatch package.
 Group: Development
-Provides: perl-Log-Dispatch-devel
+Provides: perl-Log-Dispatch-devel = %{version}-%{release}
 
 %description dev
 dev components for the perl-Log-Dispatch package.
@@ -89,13 +89,13 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-Log-Dispatch
-cp LICENSE %{buildroot}/usr/share/doc/perl-Log-Dispatch/LICENSE
-cp deblicense/copyright %{buildroot}/usr/share/doc/perl-Log-Dispatch/deblicense_copyright
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Log-Dispatch
+cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Log-Dispatch/LICENSE
+cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Log-Dispatch/deblicense_copyright
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -104,25 +104,25 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/ApacheLog.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Base.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Code.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Conflicts.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Email.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Email/MIMELite.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Email/MailSend.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Email/MailSender.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Email/MailSendmail.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/File.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/File/Locked.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Handle.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Null.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Output.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Screen.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Syslog.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Types.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Dispatch/Vars.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/ApacheLog.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Base.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Code.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Conflicts.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Email.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Email/MIMELite.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Email/MailSend.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Email/MailSender.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Email/MailSendmail.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/File.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/File/Locked.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Handle.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Null.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Output.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Screen.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Syslog.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Types.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Dispatch/Vars.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -146,6 +146,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Log::Dispatch::Vars.3
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-Log-Dispatch/LICENSE
-/usr/share/doc/perl-Log-Dispatch/deblicense_copyright
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Log-Dispatch/LICENSE
+/usr/share/package-licenses/perl-Log-Dispatch/deblicense_copyright
