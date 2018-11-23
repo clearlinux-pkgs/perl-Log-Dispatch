@@ -4,7 +4,7 @@
 #
 Name     : perl-Log-Dispatch
 Version  : 2.68
-Release  : 5
+Release  : 6
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.68.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.68.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libl/liblog-dispatch-perl/liblog-dispatch-perl_2.67-1.debian.tar.xz
@@ -16,12 +16,16 @@ BuildRequires : buildreq-cpan
 BuildRequires : perl(B::Hooks::EndOfScope)
 BuildRequires : perl(Class::Data::Inheritable)
 BuildRequires : perl(Devel::GlobalDestruction)
+BuildRequires : perl(Devel::StackTrace)
 BuildRequires : perl(Dist::CheckConflicts)
+BuildRequires : perl(Eval::Closure)
 BuildRequires : perl(Exception::Class)
+BuildRequires : perl(MRO::Compat)
 BuildRequires : perl(Module::Implementation)
 BuildRequires : perl(Module::Runtime)
 BuildRequires : perl(Package::Stash)
 BuildRequires : perl(Params::ValidationCompiler)
+BuildRequires : perl(Role::Tiny)
 BuildRequires : perl(Specio)
 BuildRequires : perl(Specio::Declare)
 BuildRequires : perl(Specio::Exporter)
