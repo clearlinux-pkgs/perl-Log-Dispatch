@@ -108,25 +108,25 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/ApacheLog.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Base.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Code.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Conflicts.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Email.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Email/MIMELite.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Email/MailSend.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Email/MailSender.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Email/MailSendmail.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/File.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/File/Locked.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Handle.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Null.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Output.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Screen.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Syslog.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Types.pm
-/usr/lib/perl5/vendor_perl/5.28.1Log/Dispatch/Vars.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/ApacheLog.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Base.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Code.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Conflicts.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Email.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Email/MIMELite.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Email/MailSend.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Email/MailSender.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Email/MailSendmail.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/File.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/File/Locked.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Handle.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Null.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Output.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Screen.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Syslog.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Types.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Log/Dispatch/Vars.pm
 
 %files dev
 %defattr(-,root,root,-)
