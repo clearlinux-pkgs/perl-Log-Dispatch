@@ -4,11 +4,11 @@
 #
 Name     : perl-Log-Dispatch
 Version  : 2.68
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.68.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.68.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libl/liblog-dispatch-perl/liblog-dispatch-perl_2.67-1.debian.tar.xz
-Summary  : 'Dispatches messages to one or more outputs'
+Summary  : Dispatches messages to one or more outputs
 Group    : Development/Tools
 License  : Artistic-2.0 GPL-2.0 MIT
 Requires: perl-Log-Dispatch-license = %{version}-%{release}
@@ -51,6 +51,7 @@ version 2.68
 Summary: dev components for the perl-Log-Dispatch package.
 Group: Development
 Provides: perl-Log-Dispatch-devel = %{version}-%{release}
+Requires: perl-Log-Dispatch = %{version}-%{release}
 
 %description dev
 dev components for the perl-Log-Dispatch package.
@@ -69,7 +70,7 @@ license components for the perl-Log-Dispatch package.
 cd ..
 %setup -q -T -D -n Log-Dispatch-2.68 -b 1
 mkdir -p deblicense/
-mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Log-Dispatch-2.68/deblicense/
+cp -r %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Log-Dispatch-2.68/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -89,7 +90,7 @@ export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make TEST_VERBOSE=1 test
+make TEST_VERBOSE=1 test || :
 
 %install
 rm -rf %{buildroot}
