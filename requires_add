@@ -1,2 +1,5 @@
 # This file contains additional runtime requirements that did not get
 # picked up automatically. One name per line, no whitespace.
+perl(MIME::Lite)
+perl(Mail::Sender)
+perl(Mail::Sendmail)

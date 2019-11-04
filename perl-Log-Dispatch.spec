@@ -4,28 +4,45 @@
 #
 Name     : perl-Log-Dispatch
 Version  : 2.69
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.69.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.69.tar.gz
-Summary  : Dispatches messages to one or more outputs
+Summary  : 'Dispatches messages to one or more outputs'
 Group    : Development/Tools
 License  : Artistic-2.0
 Requires: perl-Log-Dispatch-license = %{version}-%{release}
+Requires: perl-Log-Dispatch-perl = %{version}-%{release}
+Requires: perl(MIME::Lite)
+Requires: perl(Mail::Sender)
+Requires: perl(Mail::Sendmail)
 BuildRequires : buildreq-cpan
+BuildRequires : perl(B::Hooks::EndOfScope)
+BuildRequires : perl(Class::Data::Inheritable)
 BuildRequires : perl(Devel::GlobalDestruction)
+BuildRequires : perl(Devel::StackTrace)
 BuildRequires : perl(Dist::CheckConflicts)
+BuildRequires : perl(Eval::Closure)
+BuildRequires : perl(Exception::Class)
+BuildRequires : perl(MRO::Compat)
+BuildRequires : perl(Module::Implementation)
 BuildRequires : perl(Module::Runtime)
+BuildRequires : perl(Package::Stash)
 BuildRequires : perl(Params::ValidationCompiler)
+BuildRequires : perl(Role::Tiny)
 BuildRequires : perl(Specio)
 BuildRequires : perl(Specio::Declare)
 BuildRequires : perl(Specio::Exporter)
 BuildRequires : perl(Specio::Library::Builtins)
 BuildRequires : perl(Specio::Library::Numeric)
 BuildRequires : perl(Specio::Library::String)
+BuildRequires : perl(Sub::Exporter::Progressive)
+BuildRequires : perl(Sub::Identify)
 BuildRequires : perl(Test::Fatal)
 BuildRequires : perl(Test::Needs)
 BuildRequires : perl(Try::Tiny)
+BuildRequires : perl(Variable::Magic)
 BuildRequires : perl(namespace::autoclean)
+BuildRequires : perl(namespace::clean)
 BuildRequires : util-linux
 
 %description
@@ -38,7 +55,6 @@ version 2.69
 Summary: dev components for the perl-Log-Dispatch package.
 Group: Development
 Provides: perl-Log-Dispatch-devel = %{version}-%{release}
-Requires: perl-Log-Dispatch = %{version}-%{release}
 Requires: perl-Log-Dispatch = %{version}-%{release}
 
 %description dev
@@ -53,8 +69,18 @@ Group: Default
 license components for the perl-Log-Dispatch package.
 
 
+%package perl
+Summary: perl components for the perl-Log-Dispatch package.
+Group: Default
+Requires: perl-Log-Dispatch = %{version}-%{release}
+
+%description perl
+perl components for the perl-Log-Dispatch package.
+
+
 %prep
 %setup -q -n Log-Dispatch-2.69
+cd %{_builddir}/Log-Dispatch-2.69
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -92,25 +118,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/ApacheLog.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Base.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Code.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Conflicts.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MIMELite.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MailSend.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MailSender.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MailSendmail.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/File.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/File/Locked.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Handle.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Null.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Output.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Screen.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Syslog.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Types.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Vars.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -136,3 +143,25 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/perl-Log-Dispatch/1f066dac1dafd327decd1154aa47f3a92d5d5ab4
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/ApacheLog.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Base.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Code.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Conflicts.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MIMELite.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MailSend.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MailSender.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MailSendmail.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/File.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/File/Locked.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Handle.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Null.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Output.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Screen.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Syslog.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Types.pm
+/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Vars.pm
