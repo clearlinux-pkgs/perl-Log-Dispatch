@@ -4,7 +4,7 @@
 #
 Name     : perl-Log-Dispatch
 Version  : 2.69
-Release  : 16
+Release  : 17
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.69.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.69.tar.gz
 Summary  : 'Dispatches messages to one or more outputs'
@@ -146,22 +146,22 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/ApacheLog.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Base.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Code.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Conflicts.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MIMELite.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MailSend.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MailSender.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Email/MailSendmail.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/File.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/File/Locked.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Handle.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Null.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Output.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Screen.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Syslog.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Types.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Log/Dispatch/Vars.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/ApacheLog.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Base.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Code.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Conflicts.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Email.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Email/MIMELite.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Email/MailSend.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Email/MailSender.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Email/MailSendmail.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/File.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/File/Locked.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Handle.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Null.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Output.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Screen.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Syslog.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Types.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Log/Dispatch/Vars.pm
