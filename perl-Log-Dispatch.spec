@@ -4,7 +4,7 @@
 #
 Name     : perl-Log-Dispatch
 Version  : 2.70
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.70.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.70.tar.gz
 Summary  : 'Dispatches messages to one or more outputs'
@@ -132,22 +132,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/ApacheLog.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Base.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Code.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Conflicts.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Email.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Email/MIMELite.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Email/MailSend.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Email/MailSender.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Email/MailSendmail.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/File.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/File/Locked.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Handle.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Null.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Output.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Screen.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Syslog.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Types.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Log/Dispatch/Vars.pm
+/usr/lib/perl5/*
