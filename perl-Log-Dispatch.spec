@@ -5,7 +5,7 @@
 #
 Name     : perl-Log-Dispatch
 Version  : 2.71
-Release  : 30
+Release  : 31
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.71.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.71.tar.gz
 Summary  : 'Dispatches messages to one or more outputs'
