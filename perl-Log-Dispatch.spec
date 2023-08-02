@@ -5,7 +5,7 @@
 #
 Name     : perl-Log-Dispatch
 Version  : 2.71
-Release  : 31
+Release  : 32
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.71.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.71.tar.gz
 Summary  : 'Dispatches messages to one or more outputs'
@@ -27,6 +27,7 @@ BuildRequires : perl(Specio::Exporter)
 BuildRequires : perl(Specio::Library::Builtins)
 BuildRequires : perl(Specio::Library::Numeric)
 BuildRequires : perl(Specio::Library::String)
+BuildRequires : perl(Sub::Identify)
 BuildRequires : perl(Test::Fatal)
 BuildRequires : perl(Test::Needs)
 BuildRequires : perl(Try::Tiny)
@@ -78,7 +79,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
 if test -f Makefile.PL; then
-%{__perl} Makefile.PL
+%{__perl} -I. Makefile.PL
 make  %{?_smp_mflags}
 else
 %{__perl} Build.PL
